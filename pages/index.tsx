@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   const jC = getJobCategories(summary);
   const jT = getJobNames(summary);
 
-  console.log(summary);
+  console.log(summary.slice(10));
 
   return (
     <div className={styles.container}>
@@ -43,27 +43,35 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <button className="accordion">Primary verticals ({pV.length})</button>
         <ul className="panel">
-          {pV.map((p) => (
-            <li key={p.name}>{`${p.name}: ${p.occ}`}</li>
-          ))}
+          {pV
+            .sort((a, b) => Number(b.occ) - Number(a.occ))
+            .map((p) => (
+              <li key={p.name}>{`${p.name}: ${p.occ}`}</li>
+            ))}
         </ul>
         <button className="accordion">Skills ({jS.length})</button>
         <ul className="panel">
-          {jS.map((skill) => (
-            <li key={skill.name}>{`${skill.name}: ${skill.occ}`}</li>
-          ))}
+          {jS
+            .sort((a, b) => Number(b.occ) - Number(a.occ))
+            .map((skill) => (
+              <li key={skill.name}>{`${skill.name}: ${skill.occ}`}</li>
+            ))}
         </ul>
         <button className="accordion">Job categories ({jC.length})</button>
         <ul className="panel">
-          {jC.map((title) => (
-            <li key={title.name}>{`${title.name}: ${title.occ}`}</li>
-          ))}
+          {jC
+            .sort((a, b) => Number(b.occ) - Number(a.occ))
+            .map((title) => (
+              <li key={title.name}>{`${title.name}: ${title.occ}`}</li>
+            ))}
         </ul>
         <button className="accordion">Job titles ({jT.length})</button>
         <ul className="panel">
-          {jT.map((title) => (
-            <li key={title.name}>{`${title.name}: ${title.occ}`}</li>
-          ))}
+          {jT
+            .sort((a, b) => Number(b.occ) - Number(a.occ))
+            .map((title) => (
+              <li key={title.name}>{`${title.name}: ${title.occ}`}</li>
+            ))}
         </ul>
       </main>
 

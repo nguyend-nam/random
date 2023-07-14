@@ -13,7 +13,7 @@ export interface Company {
   lng: string;
   primary_vertical: string;
   parent_sector: string;
-  child_sector: null;
+  child_sector: string;
   team_size: number;
   pretty_location: string;
   logo_url: string;
@@ -30,14 +30,14 @@ export interface Company {
   website_display: string;
   ats_name: string;
   visibility: string;
-  bf_internal_url: null;
+  bf_internal_url: any;
   jobs: Job[];
   founders: Founder[];
   company_news: CompanyNew[];
   waas_company_videos: any[];
-  hiring_video_url: null;
+  hiring_video_url: any;
   event_video_urls: EventVideoUrls;
-  event_attendees: null;
+  event_attendees: any;
   waas_ats_integrations: any[];
   external_link: string;
 }
@@ -46,10 +46,10 @@ export interface CompanyNew {
   id: number;
   title: string;
   url: string;
-  image_url: null;
-  posted_at: Date;
-  created_at: Date;
-  updated_at: Date;
+  image_url: any;
+  posted_at: string;
+  created_at: string;
+  updated_at: string;
   domain: string;
 }
 
@@ -60,7 +60,7 @@ export interface Founder {
   first_name: string;
   last_name: string;
   full_name: string;
-  founder_bio: null;
+  founder_bio: any;
   linkedin: string;
   avatar_medium: string;
   avatar_thumb: string;
@@ -77,12 +77,12 @@ export interface Job {
   description: string;
   salary_min: number;
   salary_max: number;
-  equity_min: null;
-  equity_max: null;
+  equity_min: any;
+  equity_max: any;
   show_path: string;
   edit_path: string;
   interview_process: string;
-  time_to_hire: null;
+  time_to_hire: any;
   pretty_job_type: string;
   pretty_eng_type: string;
   pretty_design_type: string;
@@ -95,19 +95,19 @@ export interface Job {
   pretty_equity_range: string;
   job_type: string;
   eng_type: string[];
-  design_type: null;
-  design_portfolio_only: null;
-  science_type: null;
-  recruiting_type: null;
+  design_type: any;
+  design_portfolio_only: any;
+  science_type: any;
+  recruiting_type: any;
   min_experience: number;
-  location: null;
+  location: any;
   locations: string[];
   remote: string;
-  local_only: null;
+  local_only: any;
   visa: string;
   hiring_manager: HiringManager;
   jobs_search: JobsSearch;
-  'Technologies"'?: string;
+  Technologies?: string;
 }
 
 export interface HiringManager {
@@ -123,7 +123,7 @@ export interface JobsSearch {
   id: number;
   state: string;
   filters: Filters;
-  created_at: Date;
+  created_at: string;
 }
 
 export interface Filters {
